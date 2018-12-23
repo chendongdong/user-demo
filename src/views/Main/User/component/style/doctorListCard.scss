@@ -1,0 +1,105 @@
+@import "../../../../../styles/scss/vars";
+
+$image-bg-width: 120px;
+$header-height: 30px;
+
+.doctor-list-card {
+
+  border-bottom: 1px solid $g-gary-lighter;
+  height: auto;
+  background-color: #FFFFFF;
+  //margin: 0 4px;
+  padding: 8px 4px;
+  width: 100%;
+
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-box;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+
+  .doctor-image-bg {
+    width: $image-bg-width;
+    min-width: $image-bg-width;
+
+    .doctor-image {
+      width: 80px;
+      height: 80px;
+      max-height: 80px;
+      border-radius: 50%;
+      margin: 10px 0 0 10px;
+    }
+  }
+
+  .doctor-content {
+    width: 100%;
+
+    .doctor-header {
+      height: $header-height;
+      line-height: $header-height;
+
+      .name {
+        font-size: 16px;
+      }
+      .position {
+        margin-left: 16px;
+        font-size: 13px;
+      }
+    }
+
+    .doctor-body {
+      line-height: 2;
+      color: #666;
+      width: auto;
+      font-size: 13px;
+
+      .vux-x-icon {
+        fill: $g-gary-lighter;
+        margin: -35px 10px 0 0;
+      }
+      //.remark {
+      //  background-color: red;
+      //  //overflow: hidden;
+      //  ////margin-right: 10px;
+      //  max-width: 80%;
+      //  word-break: normal;
+      //  width: auto;
+      //  display: block;
+      //  white-space: pre-wrap;
+      //  word-wrap: break-word;
+      //  overflow: hidden;
+      //
+      //}
+    }
+  }
+
+  .doctor-footer {
+    margin-top: 8px;
+
+    .footer-box {
+      .vux-flexbox-item {
+        font-size: 13px;
+      }
+      .doctor-footer-image {
+        height: 25px;
+        width: 25px;
+        margin-bottom: -7px;
+      }
+      .doctor-footer-title {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        padding: 5px 0;
+      }
+      .weui-btn {
+        border-radius: 0;
+        line-height: 1.6;
+        font-size: 14px;
+        width: 80%;
+      }
+    }
+  }
+  .vux-x-icon{
+    fill: #c8c8cd;
+  }
+}

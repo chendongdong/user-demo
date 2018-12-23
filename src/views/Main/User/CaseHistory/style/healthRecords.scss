@@ -1,0 +1,43 @@
+.health-records .header_view {
+    height: 60px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    border-bottom: 1px solid #e5e5e5;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    .header_content {
+        margin-left: 10px;
+        display: block;
+        width: 100%;
+        padding: 10px 0px 10px 0px;
+        p {
+            margin: 4px 0px;
+            font-size: 15px;
+        }
+    }
+    .image {
+        width: 51px;
+        height: 51px;
+        border-radius: 50%;
+    }
+    .name {
+        // font-size: 15px;
+        display: flex;
+    }
+    .text {
+        margin-top: 5px;
+    }
+    .date_info {
+        font-size: 11px;
+        color: #C8C8C8;
+        margin-right: 10px;
+        text-align: right;
+        width: 150px;
+    }
+
+}
+
+

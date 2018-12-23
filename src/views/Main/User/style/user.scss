@@ -1,0 +1,126 @@
+@import "../../../../styles/scss/vars";
+
+.user-profile {
+  .weui-cells {
+    margin-top: 10px;
+  }
+  .vux-header-right {
+    top: 12px;
+  }
+  .user-info {
+    //text-align: center;
+    background-size: cover;
+
+
+    .user-info-header {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      background: url('~assets/ic_mine_bcg.jpg') center center no-repeat;
+      height: 150px;
+      background-size: cover;
+
+      span {
+        line-height: 2.0;
+      }
+      .user-info-img {
+        width: 120px;
+        img {
+          margin-top: 40px;
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          margin-left: 20px;
+        }
+      }
+      .name {
+        padding-right: 5px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .user-info-footer {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid $g-gary-lighter;
+      //height: 60px;
+      height: 48px;
+
+      .user-info-footer-image {
+        transform:rotate(90deg);
+        -ms-transform:rotate(90deg); 	/* IE 9 */
+        -moz-transform:rotate(90deg); 	/* Firefox */
+        -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+        -o-transform:rotate(90deg); 	/* Opera */
+        //height: 20px;
+        //width: 40px;
+        height: 16px;
+        width: 32px;
+        margin-top: 15px;
+        margin-left: 5px;
+      }
+      span {
+        line-height: 2.0;
+      }
+      .fa-bookmark {
+        //padding: 10px 0;
+      }
+      .user-info-text {
+        color: $g-gray;
+        padding-left: 8px;
+        line-height: 48px;
+      }
+      .user-info-tel {
+        color: blue;
+        font-size: 13px;
+      }
+      .user-info-call {
+        height: 30px;
+        width: 30px;
+        float: right;
+        margin-left: 5px;
+        margin-top: -5px;
+      }
+
+    }
+  }
+
+  .user-cell-icon {
+    padding: 0 8px;
+  }
+  .pwd-popup {
+    .pwd-title-bd {
+      height: 60px;
+      text-align: center;
+      .pwd-title {
+        line-height: 60px;
+        font-size: 16px;
+      }
+    }
+    .pwd-input-bd {
+      height: 60px;
+      width: 90%;
+      margin: 10px auto;
+      text-align: center;
+      .input-pay-pwd {
+        width: 50%;
+        height: 30px;
+        text-align: center;
+      }
+    }
+    .pwd-btn {
+      height: 40px;
+      width: 80%;
+      margin: 20px auto;
+      font-size: 16px;
+    }
+  }
+
+}

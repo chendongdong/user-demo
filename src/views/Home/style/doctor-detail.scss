@@ -1,0 +1,141 @@
+@import "../../../styles/scss/vars";
+
+.doctor-main {
+  .pad-content {
+    padding: 44px 0 20px 0;
+  }
+  .main {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    background-color: #FFFFFF;
+    .img-father{
+      width: 70px;
+      height: 70px;
+    }
+    .image {
+      width: 70px;
+      height: 70px;
+      min-width: 70px;
+      border-radius: 50%;
+    }
+    .base-info {
+      margin-left: 10px;
+      display: block;
+      width: 100%;
+      p {
+        margin: 8px 0px;
+        font-size: 13px;
+        color: #666;
+      }
+      .name {
+        font-size: 16px;
+        color: #333;
+      }
+    }
+    .follow-button {
+      width: 120px;
+      height: auto;
+      .follow-image {
+        margin: 20px 0 -10px 0;
+      }
+      .follow-title {
+        line-height: 2;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .mint-indexlist-nav {
+    display: none;
+  }
+  .doc-introduce {
+    position: relative;
+    margin-bottom: 12px;
+    border-bottom: 1px solid $g-gary-lighter;
+    background: #fff;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    padding-bottom: 8px;
+    .doc-introduce-image {
+      height: 100%;
+      width: 40px;
+      min-width: 40px;
+      text-align: center;
+
+      img {
+        margin-top: 6px;
+        width: 30px;
+      }
+    }
+    .doc-introduce-title {
+      height: 30px;
+      margin: 8px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .doc-introduce-content {
+      padding: 8px 10px;
+      min-height: 36px;
+      font-size: 13px;
+      line-height: 150%;
+      color: #666;
+    }
+  }
+  .doc-introduce-content-image {
+    padding: 10px;
+    min-height: 40px;
+    text-align: center;
+    .imageCode {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    line-height: 41px;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    .booking-btn {
+      width: 95%;
+    }
+  }
+  .vux-close {
+    margin-top: 8px;
+    margin-right: 10px;
+    float: right;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    color: #ccc;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      background: #98979d;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  .weui-btn{
+    font-size: 16px;
+  }
+}

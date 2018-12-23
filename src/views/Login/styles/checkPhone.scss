@@ -1,0 +1,65 @@
+@import "../../../styles/scss/vars";
+
+.check-phone {
+  font-size: 15px;
+  .content {
+    .primary-font {
+      color: #7B7B8C;
+    }
+    .explanation {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .primary {
+      font-size: 20px;
+    }
+    .input-group {
+      margin: 20px;
+
+      .weui-cell {
+        padding: 10px;
+      }
+      .weui-cell:before {
+        left: 0;
+        border-top: none;
+        border-bottom: 2px solid $g-brand-color;
+      }
+      .weui-cell:last-child {
+        border-bottom: 1px solid $g-brand-color;
+      }
+    }
+  }
+
+  .confirm {
+    width: 90%;
+    margin: 35px auto;
+
+    .login-button {
+      font-size: 15px;
+    }
+    .weui-btn_default {
+      background-color: $g-gray;
+      opacity: 0.6;
+      color: #FFFFFF;
+      &:after {
+        border: none;
+      }
+    }
+  }
+
+  .img-code {
+    margin: 4px;
+    width: 150px;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    justify-content: center;
+    -webkit-align-content: center;
+    -webkit-align-items: center;
+  }
+
+}

@@ -1,0 +1,164 @@
+module.exports = (function () {
+  function userData () {
+    var o
+    // userData for IE: http://msdn.microsoft.com/zh-cn/vstudio/ms531424
+    // As userData has the PATH rules, we need to break the rules in order to use it in all the current domain
+    // So we need an iframe
+    try {
+      var htmlfile = new window.ActiveXObject('htmlfile'), doc, o
+      htmlfile.open()
+      htmlfile.write('<iframe src="/favicon.ico"></iframe>')
+      htmlfile.close()
+      doc = htmlfile.frames[0].document
+      o = doc.createElement('div')
+      doc.appendChild(o)
+      o.addBehavior('#default#userData')
+    } catch (e) {}
+
+    return {
+      get: function (name) {
+        var value
+        o.load(name)
+
+        value = o.getAttribute(name)
+        try {
+          value = JSON.parse(value)
+        } catch (e) {}
+        return value
+      },
+      set: function (name, value, seconds) {
+        if (seconds) {
+          var d = new Date()
+          d.setTime(d.getTime() + seconds * 1000)
+          o.expires = d.toUTCString()
+        }
+        o.setAttribute(name, JSON.stringify(value))
+        o.save(name)
+      },
+      remove: function (name) {
+        o.removeAttribute(name)
+        o.save(name)
+      }
+    }
+  }
+
+  function _localStorage () {
+    // Clear the outdated data
+    var d = new Date().getTime()
+    for (var key in window.localStorage) {
+      // 刷新时会删除所有的localStorage数据，所以要判断只有是token才进行以下操作
+      if (key === 'default-auth-token-user') {
+        var v = window.localStorage.getItem(key)
+        // If you add storage throw localStorage.setItem("abc","abcvalue") not Storage.set("abc","abcvalue"),it will catch an error when parse the value "abcvalue"
+        try {
+          v = JSON.parse(v)
+        } catch (e) {
+          window.localStorage.removeItem(key)
+        }
+        var isArr = Object.prototype.toString.call(v).toLowerCase().indexOf('array') > 0
+        var isObj = Object.prototype.toString.call(v).toLowerCase().indexOf('object') > 0
+        if (isArr) {
+          if (v[0].expires === undefined) {
+            window.localStorage.removeItem(key)
+          }
+          var expires = v[0].expires
+          if (expires && /^\d{13,}$/.test(expires) && expires <= d) window.localStorage.removeItem(key)
+        } else if (isObj) {
+          window.localStorage.removeItem(key)
+        }
+      }
+    }
+    return {
+      get: function (name) {
+        var v = window.localStorage.getItem(name)
+        if (!v) return null
+        try {
+          v = JSON.parse(v)
+        } catch (e) {}
+
+        if (typeof v !== 'object') return v
+        // If the first element is an object with "expires" property, it may be an expiring date(number at least 13 digits) of the current data.
+        var expires = v[0].expires
+        if (expires && /^\d{13,}$/.test(expires)) {
+          var d = new Date().getTime()
+          if (expires <= d) {
+            window.localStorage.removeItem(name)
+            return null
+          }
+          v.shift()
+        }
+        return v[0]
+      },
+      set: function (name, value, seconds) {
+        var v = []
+        if (seconds) {
+          var d = new Date().getTime()
+          v.push({'expires': (d + seconds * 1000)})
+        }
+        v.push(value)
+        window.localStorage.setItem(name, JSON.stringify(v))
+      },
+      remove: function (name) {
+        window.localStorage.removeItem(name)
+      }
+    }
+  }
+
+  var cookie = {
+    get: function (name) {
+      var result
+      var v = document.cookie
+      if (v.length > 0) {
+        var start = v.indexOf(encodeURIComponent(name) + '=')
+        if (start > -1) {
+          start = start + name.length + 1
+          var end = v.indexOf(';', start)
+          if (end == -1) end = v.length
+
+          result = v.substring(start, end)
+          // console.log('result:', result)
+          try {
+            result = JSON.parse(decodeURIComponent(result))
+          } catch (e) {
+            // console.log('e', e)
+          }
+          return result
+        }
+      }
+      return null
+    },
+    set: function (name, value, seconds, path, domain) {
+      var p = path || '/'
+      var expires = ''
+      if (seconds) {
+        // IE:expires,Others:max-age
+        if (window.ActiveXObject) {
+          var d = new Date()
+          d.setTime(d.getTime() + seconds * 1000)
+          expires = 'expires=' + d.toGMTString()
+        } else {
+          expires = 'max-age=' + seconds
+        }
+      }
+      document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(JSON.stringify(value)) + ';' + expires + ';path=' + p + ';' + (domain ? ('domain=' + domain) : '');
+    },
+    remove: function (name, path, domain) {
+      this.set(name, '', -1, path, domain)
+    }
+  }
+
+  var adapter
+
+  if (!window.localStorage) {
+    adapter = userData()
+  } else {
+    adapter = _localStorage()
+  }
+
+  return {
+    get: adapter.get,
+    set: adapter.set,
+    remove: adapter.remove,
+    cookie: cookie
+  }
+})()

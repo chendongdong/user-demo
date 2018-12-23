@@ -1,0 +1,102 @@
+@import "../../../../styles/scss/vars";
+
+.insurance-detail {
+  .insur-info {
+    background: white;
+    padding: 10px;
+  }
+  .type {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .state {
+    margin-left: 10px;
+    font-size: 12px;
+    background: $g-brand-color;
+    padding: 2px 6px;
+    color: white;
+  }
+  .title {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #999;
+  }
+  .name {
+    color: #666;
+  }
+  .money {
+    color: red;
+  }
+  .fun-btn {
+    display: flex;
+    margin: 5px;
+    .btn {
+      flex: 1;
+      margin: 5px;
+    }
+  }
+
+  .person-info{
+    padding: 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #D9D9D9;
+    .name-info{
+      margin-top: 6px;
+    }
+    .name-title{
+      width: 80px;
+      color: #999;
+      display: inline-block;
+      text-align: right;
+    }
+  }
+  .amount{
+    background: white;
+    border: 1px solid #dfdfdf;
+    color: #999;
+    margin-top: 10px;
+    .amount-flex{
+      margin: 6px 10px;
+      display: flex;
+      display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -webkit-flex;     /* NEW - Chrome */
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+  }
+  .consult-info{
+    padding: 10px 0;
+    margin: 0 10px;
+    .consult-item{
+      color: #999;
+      margin-top: 5px;
+    }
+    .lable{
+      color: white;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #c9c9c9;
+      text-align: center;
+    }
+  }
+  .service{
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    text-align: center;
+  }
+  .service-img{
+    width: 50px;
+    height: 50px;
+  }
+  .service-text{
+    font-size: 12px;
+    background: $g-brand-color;
+    padding: 0px 4px;
+    color: white;
+    border-radius: 10%;
+  }
+}

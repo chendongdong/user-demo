@@ -1,0 +1,97 @@
+@import "../../../styles/scss/vars";
+
+.safety-evaluat {
+  .app-content {
+    P {
+      color: #7b7b7b;
+    }
+    .module-cell {
+      background-color: #E6E6E6;
+      .vux-label {
+        color: #727272
+      }
+    }
+    .color-flex_bg {
+      position: fixed;
+      top: 46px;
+      width: 100%;
+      z-index: 100
+    }
+    .color-flex, .color-flex-item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background: white;
+      color: #333;
+      font-size: 14px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      padding: 6px 0;
+      .colors {
+        width: 15px;
+        height: 10px;
+        margin-right: 6px;
+        background: #707c94;
+      }
+    }
+    .color-flex-item {
+      margin: 0 10px;
+    }
+    .record-title {
+      //margin-top: 80px;
+      font-size: 14px;
+      text-align: center;
+    }
+    .record-list {
+      background: white;
+      border: 1px solid #ECECEC;
+      margin: 8px 10px;
+      padding-bottom: 10px;
+      position: relative;
+      .safe-level {
+        font-size: 15px;
+        color: #333;
+        font-weight: bold;
+      }
+      p {
+        margin: 4px 0 4px 10px;
+        padding: 5px 0 0 0;
+        //margin-left: 10px;
+        //padding-top: 5px;
+      }
+      .cell-x-icon-bg {
+        position: absolute;
+        height: 100%;
+        float: right;
+        right: 0;
+        .vux-x-icon {
+          fill: lightgrey;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          height: 100%;
+        }
+      }
+    }
+    .content-card {
+       padding-bottom: 56px;
+    }
+    .bottom {
+      position: fixed;
+      bottom: 0;
+      z-index: 99;
+      width: 100%;
+      background-color: #F7F7F7;
+      .submit {
+        padding: 10px 20px;
+      }
+      .weui-btn {
+        font-size: 15px;
+        height: 36px;
+      }
+    }
+  }
+}

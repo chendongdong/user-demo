@@ -1,0 +1,22 @@
+.insurance-list {
+  .app-header {
+    position: fixed;
+    width: 100%
+  }
+
+  .content {
+    margin-top: 46px;
+
+    .swiper-box {
+      //position: fixed;
+      //width: 100%;
+    }
+    .swiper-label {
+      height: 36px;
+      width: 100%;
+      border-bottom: 1px solid lightgray;
+      background-color: white
+    }
+
+  }
+}

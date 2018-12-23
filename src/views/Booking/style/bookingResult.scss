@@ -1,0 +1,92 @@
+@import "../../../styles/scss/vars";
+
+.booking-result {
+  color: #6c6c6c;
+  .content {
+    margin-top: 50px;
+    .page-header {
+      padding: 10px;
+      margin-bottom: -5px;
+      text-align: center;
+    }
+    .page-group {
+      padding: 10px;
+      margin: 10px 8px;
+      border: 1px solid $g-brand-color;
+        .info-title {
+          padding: 4px 0;
+          margin: 0 10px;
+          font-size: 15px;
+        }
+      .info-content {
+        margin-top: 8px;
+        .row {
+          margin-top: 8px;
+        }
+        .info-content-title {
+          font-weight: 400;
+          font-size: 14px;
+          border-radius: 3px;
+          margin: 1px;
+        }
+        .info-content-txt {
+        }
+      }
+    }
+    .page-code {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-bottom: 1px solid #eaeaea;
+      .qr_code {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    .page-bottom {
+      .bottom-title-bg {
+        padding: 10px 10px 5px 10px;
+        font-weight: 500;
+      }
+      .bottom-line {
+        border-bottom: 1px solid darkgray;
+        width: 80px;
+        margin-top: 10px;
+      }
+      .bottom-content {
+        padding: 0 10px 10px 10px;
+        font-size: 14px;
+        line-height: 160%;
+      }
+    }
+  }
+  .img-dialog {
+    .weui-dialog{
+      border-radius: 8px;
+      padding-bottom: 8px;
+    }
+    .dialog-title {
+      line-height: 30px;
+      color: #666;
+    }
+    .img-box {
+      overflow: hidden;
+      width: 95%;
+      height: 95%;
+      margin-left: 2.5%;
+      margin-top: 2.5%;
+    }
+    .img-box-title {
+      line-height: 25px;
+      margin-top: -10px;
+    }
+    .dialog-close {
+      height: 46px;
+      .vux-x-icon {
+        fill: darkgray;
+      }
+    }
+  }
+}

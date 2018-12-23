@@ -1,0 +1,25 @@
+@import "../../../styles/scss/vars";
+
+.edit-remind {
+  .app-content {
+    .weui-cells {
+      font-size: 15px;
+      a {
+        text-decoration:none;
+      }
+    }
+    .time-cell {
+      font-size: 14px;
+      color: $g-gray;
+      .weui-cell__ft {
+        font-size: 14px;
+        color:$g-gray;
+      }
+    }
+    .content-popup {
+      .weui-input {
+        text-align: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+@import "../../../styles/scss/vars";
+.insurance-introduce{
+  .app-content{
+    padding-top: 90px;
+    padding-bottom: 110px;
+  }
+  .flex-intro{
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    .intro-img{
+      width: 150px;
+      height: 150px;
+    }
+    .intro-info{
+      flex: 1;
+      font-size: 14px;
+      color: white;
+      background: rgb(238, 106, 167);
+    }
+    .name{
+      margin-left: 15px;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .cell-x-icon{
+      fill: white;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  .info,.logo,.common-top{
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    -webkit-align-items: center;
+    align-items: center;
+    //padding-left: 10px;
+    margin: 5px;
+  }
+  .logo{
+    color: #999;
+    margin: 0;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 2px 10px;
+    background: white;
+    font-size: 12px;
+  }
+  .insur-info{
+    margin-top: 10px;
+    background: white;
+    padding: 5px 10px;
+    .insur-name{
+      color: #555;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .price{
+      color: orange;
+      font-size: 22px;
+      margin-top: 5px;
+    }
+  }
+  .range,.common-top{
+    padding: 0;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    align-items: center;
+    align-content: center;
+    -webkit-align-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+  }
+  .insur-range{
+    background: white;
+    padding: 5px 10px;
+    .range-item{
+      .weui-cells{
+        margin-top: 10px;
+      }
+      .weui-cell{
+        padding: 5px 10px;
+      }
+      .vux-label{
+        font-size: 15px;
+      }
+      .vux-label-desc{
+        font-size: 13px;
+      }
+      .weui-cell__ft{
+        font-size: 14px;
+      }
+    }
+  }
+  .img-big{
+    width: 100%;
+  }
+  .common-top{
+    padding: 5px 10px;
+    margin: 0;
+    background: white;
+    //border-bottom: 1px solid #dfdfdf;
+  }
+  .insur-case{
+    //margin-top: 10px;
+    border-top: 1px solid #dfdfdf;
+    .info{
+      padding: 0px;
+      color: #666;
+    }
+    .prena-week{
+      color: #999;
+      margin-left: 20px;
+      font-size: 12px;
+    }
+    .price{
+      margin-left: 10px;
+      color: orange;
+      font-size: 18px;
+    }
+    .case-info{
+      color: #999;
+      font-size: 13px;
+    }
+    .money{
+      color: $g-brand-color;
+    }
+  }
+  .case-left,.case-right{
+    display: flex;
+    padding: 10px;
+    background: white;
+    .head-img{
+      width: 80px;
+      img{
+        width: 80px;
+      }
+    }
+    p{
+      margin: 10px;
+      color: #666;
+      font-size: 16px;
+    }
+    .case-info{
+      flex: 1;
+    }
+    .details{
+      margin-left: 10px;
+      padding: 6px 10px;
+      color: white;
+      background: rgb(255,126,121);
+      border-radius: 10px;
+    }
+  }
+  .case-right{
+    .case-info{
+      text-align: right;
+    }
+  }
+  .com-quest{
+    background: white;
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    .question{
+      margin-top: 10px;
+      color: rgb(204,153,255);
+    }
+    .q-title,.a-title{
+      line-height: 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background: rgb(204,153,255);
+      color: white;
+    }
+    .a-title{
+      background: rgb(255,153,102);
+    }
+    .answer{
+      margin-top: 10px;
+    }
+  }
+  .evaluat{
+    .flex{
+      margin-top: 10px;
+      display: flex;
+      display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -webkit-flex;     /* NEW - Chrome */
+      .time{
+        margin-top: 3px;
+        color: #999;
+        font-size: 12px;
+        float: right;
+      }
+      .text{
+        color: darkgray;
+        font-size: 13px;
+      }
+    }
+    .appaise{
+      margin-bottom: 80px;
+      margin-top: 10px;
+      //padding-top: 10px;
+      border-top: 1px solid #dfdfdf;
+    }
+    .appraise_img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    .appraise_name {
+      overflow: hidden;
+      width: 100%;
+      font-size: 12px;
+      color: darkgray
+    }
+  }
+  .claims{
+    background: white;
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    .step{
+      display: flex;
+      display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -webkit-flex;     /* NEW - Chrome */
+      align-items: center;
+      -webkit-align-items: center;
+      .icon{
+        align-items: center;
+        //width: 50px;
+        //height: 50px;
+        text-align: center;
+        padding: 6px 0;
+        img{
+          padding: 10px;
+          border-radius: 50%;
+          border: 2px solid #efefef;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .step-detail{
+        flex: 1;
+        margin-left: 10px;
+      }
+      .title{
+        font-size: 14px;
+        color: #333;
+      }
+      .dsc{
+        margin-left: 10px;
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+  .tips{
+    margin: 10px;
+    color: #666;
+    a{
+      color: $g-brand-color;
+      text-decoration: none;
+    }
+  }
+
+  .service{
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    text-align: center;
+  }
+  .service-img{
+    width: 50px;
+    height: 50px;
+  }
+  .service-text{
+    font-size: 12px;
+    background: $g-brand-color;
+    padding: 0px 4px;
+    color: white;
+    border-radius: 10%;
+  }
+  .bottom{
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    width: 100%;
+    .price{
+      flex: 1.5;
+      display: inline-block;
+      background: white;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      color: orange;
+    }
+    .btn{
+      height: 40px;
+      flex: 2;
+      display: inline-block;
+    }
+    .weui-btn{
+      border-radius: 0px;
+    }
+  }
+  .appraise{
+    background: #F7F7F7;
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 80px;
+    padding-top: 10px;
+    //bottom: 120px;
+    .vux-x-textarea.weui-cell{
+      border: 1px solid #d9d9d9;
+      border-radius: 5px;
+    }
+    .weui-cells{
+      margin-top: 5px;
+    }
+    .weui-textarea{
+      color: #666;
+      font-size: 14px;
+    }
+    .weui-cell{
+      padding: 5px;
+    }
+    .weui-btn{
+      border-radius: 5px;
+    }
+    .btn-submit{
+      margin-top: 26px;
+      margin-left: 10px;
+      margin-right: 20px;
+      height: 30px;
+    }
+    .weui-cells:before{
+      border-top: 0px;
+    }
+    .weui-cells:after{
+      border-bottom: 0px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.user-modify {
+
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .save {
+    color: white;
+    border: 1px solid white;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .manage-group {
+    .vux-popup-dialog {
+      background: white;
+    }
+    .btn-confirm {
+      margin: 10px auto;
+      width: 90%;
+      text-align: center;
+    }
+    .weui_cell_primary p {
+      margin: 8px 20px;
+      font-size: 15px;
+    }
+    .weui_dialog_ft {
+      display: none;
+    }
+    .weui_dialog_bd {
+      padding: 0;
+    }
+    .close-dialog {
+      float: right;
+      margin: 6px 10px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      overflow: hidden;
+      color: #ccc;
+      &:after, &:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        background: #98979d;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+    .weui_dialog_confirm .weui_dialog .weui_dialog_hd {
+      padding: 0;
+    }
+  }
+
+  .img-head{
+    width: 120px;
+    height: 120px;
+    margin-top: 30px;
+    border: 2px solid #e4e4e4;
+    border-radius: 60px;
+  }
+  .input-file{
+    opacity:0;
+    position:absolute;
+    margin-top:2px;
+    width: 90px;
+    height: 30px;
+  }
+  .input-text{
+    background-color: #F7F7F7;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    width: 80px;
+  }
+}

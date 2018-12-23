@@ -1,0 +1,55 @@
+.article{
+  .health-flex{
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    -webkit-align-items: center;
+    align-items: center;
+    margin-bottom: -15px;
+    height: 42px;
+    margin-left: 10px;
+  }
+
+  .content{
+    background: white;
+    white-space: pre-wrap;
+    padding: 10px;
+    p{
+      margin: 10px;
+    }
+  }
+
+  .about-us{
+    padding: 10px;
+    p{
+      line-height: 160%;
+    }
+  }
+
+  .consult{
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    width: 100%;
+    background: white;
+    text-decoration: none;
+    border-bottom: solid 1px #efefef;
+    padding: 5px;
+  }
+  .time{
+    color:#888;
+    display: flex;
+    justify-content: space-between;
+  }
+  .comments{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    .cnt{
+      color: #999;
+      margin-left: 5px;
+    }
+  }
+}

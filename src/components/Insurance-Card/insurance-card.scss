@@ -1,0 +1,141 @@
+@import "../../styles/scss/vars";
+
+$insurance-card-header-height: 40px;
+.insurance-card {
+
+  .more-doc{
+    font-size: 14px;
+    float: right;
+    color: #999;
+    margin-right: 10px;
+    &:after{
+      margin-top: 6px;
+      margin-right: 15px;
+      content: " ";
+      display: inline-block;
+      height: 6px;
+      width: 6px;
+      border-width: 2px 2px 0 0;
+      border-color: #C8C8CD;
+      border-style: solid;
+      -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      position: absolute;
+      right: 2px;
+    }
+  }
+  .insurance-main {
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    margin: 8px;
+    box-shadow: 1px 2px 4px #cccccc;
+
+    .card-header {
+      position: relative;
+      height: $insurance-card-header-height;
+      .name {
+        line-height: $insurance-card-header-height;
+        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .buy{
+        position: absolute;
+        right: 10px;
+        margin-top: 10px
+      }
+    }
+
+    .card-content {
+      display: flex;
+      display: -webkit-flex;
+      display: -moz-flex;
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      margin: 0;
+      font-size: 13px;
+
+      .img {
+        width: 100px;
+        margin: 10px 0;
+        img{
+          width: 100px;
+        }
+      }
+      .info {
+        -webkit-flex: 1;
+        flex: 1;
+        padding: 0 10px 10px 10px;
+        span {
+          line-height: 23px;
+        }
+        .info-title {
+          color: green;
+          font-size: 16px;
+          padding: 2px 0;
+        }
+
+        .info-applicable {
+          color: #999;
+        }
+        .info-age {
+          color: #999;
+        }
+        .info-statement {
+          color: red;
+        }
+        .info-his {
+
+        }
+      }
+    }
+  }
+  .my-insurance {
+    margin-top: 10px;
+    background: white;
+    padding: 10px;
+    .type{
+      font-size: 15px;
+      font-weight: bold;
+      &:after{
+        margin-top: 6px;
+        margin-right: 15px;
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        border-width: 2px 2px 0 0;
+        border-color: #C8C8CD;
+        border-style: solid;
+        -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        position: absolute;
+        right: 2px;
+      }
+    }
+    .state{
+      margin-left: 10px;
+      font-size: 12px;
+      background: $g-brand-color;
+      padding: 2px 6px;
+      color: white;
+    }
+    .title{
+      margin-top: 6px;
+      font-size: 12px;
+      color: #999;
+    }
+    .name{
+      color: #666;
+    }
+    .money{
+      color: red;
+    }
+    .fun-btn{
+      text-align: right;
+      .btn{
+        margin-right: 10px;
+      }
+    }
+  }
+}

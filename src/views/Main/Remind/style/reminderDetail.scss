@@ -1,0 +1,50 @@
+@import "../../../../styles/scss/vars";
+
+.remind-detail {
+  .content {
+    margin-top: 46px;
+    .content-header {
+      text-align: center;
+      background: #FFFFFF;
+
+      .content-header-title {
+        background-color: #FFFFFF;
+        line-height: 40px;
+        font-size: 18px;
+        font-weight: 600;
+        color: darkgray;
+      }
+      .content-header-divider {
+        font-size: 13px;
+      }
+    }
+    .content-info {
+      padding: 8px 8px 100px 8px;
+    }
+    .content-insurance {
+      position: fixed;
+      bottom: 0;
+      width: 100%
+    }
+  }
+  .footer {
+    //position: fixed;
+    //bottom: 0;
+    //width: 100%;
+    background-color: $g-bg-color;
+    height: 54px;
+    padding-bottom: 110px;
+    .footer-box {
+      width: 80%;
+      margin: 7px auto;
+
+      .weui-btn {
+        //border-radius: 0;
+        font-size: 16px;
+      }
+      .weui-btn:after {
+        //border: 0;
+      }
+    }
+  }
+}

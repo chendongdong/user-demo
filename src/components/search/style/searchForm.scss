@@ -1,0 +1,72 @@
+@import "../../../styles/scss/vars";
+.header-search {
+  padding: 0px;
+  display: flex;
+  height: 42px;
+  flex-direction: row;
+  //justify-content: center;
+  align-items: center;
+  //align-content: center;
+  width: 100%;
+  background-color: $g-brand-color;
+  .header-search-left {
+    color: #FFFFFF;
+    z-index: 100;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+
+    .header-search-back {
+      padding-right: 6px;
+    }
+    .left-arrow {
+      //position: absolute;
+      width: 40px;
+      height: 42px;
+      top: 7px;
+      left: 10px;
+      z-index: 100;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-width: 2px 0 0 2px;
+        border-color: #FFFFFF;
+        border-style: solid;
+        transform: rotate(315deg);
+        top: 12px;
+        left: 15px;
+        z-index: 100;
+      }
+    }
+  }
+  .search-icon{
+    padding: 8px 12px;
+    color: white;
+    font-size: 16px;
+  }
+  .search-btn {
+    //padding: 8px;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    display: -webkit-flex;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -webkit-flex;     /* NEW - Chrome */
+    -webkit-align-items: center;
+    align-items: center;
+    padding-left: 8px;
+  }
+  .auto-complete{
+    width: 64%;
+  }
+  &.fixed{
+    position: fixed;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+  }
+}

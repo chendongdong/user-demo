@@ -1,0 +1,134 @@
+.insurance-introduce {
+  .app-header {
+    position: fixed;
+    width: 100%
+  }
+
+  .content {
+    margin-top: 46px;
+
+    .swiper-box {
+
+    }
+    .swiper-label {
+      height: 36px;
+      width: 100%;
+      border-bottom: 1px solid lightgray;
+      background-color: white
+    }
+    .i-intro-card {
+      background-color: #FFFFFF;
+      margin: 8px;
+      padding: 8px;
+      border-radius: 5px;
+      line-height: 200%;
+      a {
+        text-decoration: none;
+      }
+      .i-intro-card-header {
+        width: 100%;
+        display: inline-flex;
+
+        .i-intro-card-header-name {
+          white-space: nowrap;
+          text-align: left;
+          font-size: 16px;
+          font-weight: 600;
+          font-style: normal;
+          text-decoration: none;
+          color: rgb(94, 94, 94);
+        }
+        .i-intro-card-header_img {
+          height: 25px;
+          width: 25px;
+        }
+        .i-intro-card-header_title {
+          color: #68C84F;
+          font-size: 16px;
+          margin-top: 2px;
+          line-height: 20px;
+        }
+
+        .i-intro-card-header_btn {
+          border-radius: 5px;
+          border: 1px solid #68C84F;
+          font-size: 13px;
+          color: #68C84F;
+          background-color: #fff;
+          float: right;
+          padding: 2px 8px;
+        }
+      }
+      .i-intro-card-info_1 {
+        //display: flex;
+        //flex-direction: column;
+        //justify-content: center;
+        //align-content: center;
+
+        .i-intro-card-info_btn {
+          text-align: center;
+          padding: 0 8px;
+          line-height: 40px;
+          border-radius: 5px;
+          width: 300px;
+          color: #FFFFFF;
+          font-size: 16px;
+          margin: 8px auto;
+        }
+      }
+      .i-intro-card-appraise_img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+      .i-intro-card-appraise_name {
+        overflow: hidden;
+        width: 100%;
+        font-size: 12px;
+        color: darkgray
+      }
+    }
+
+    .i-intro-card_footer {
+      line-height: 30px;
+      padding-bottom: 60px;
+      text-align: center;
+      a {
+        text-decoration: none;
+      }
+    }
+    .i-intro-footer {
+      position: fixed;
+      bottom: 0;
+      height: 50px;
+      display: inline-flex;
+      width: 100%;
+      background-color: #fff;
+
+      .i-intro-footer-img_bg {
+        text-align: center;
+        width: 60px;
+        margin-top: 2px;
+        img {
+          height: 25px;
+          width: 30px;
+        }
+        p {
+          width: 100%;
+          font-size: 12px;
+          color: darkgray
+        }
+      }
+      .i-intro-footer-btn_bg {
+        width: 100%;
+        .i-intro-footer-btn {
+          width: 100%;
+          height: 44px;
+          font-size: 14px;
+          margin: 3px auto
+        }
+
+      }
+    }
+  }
+}

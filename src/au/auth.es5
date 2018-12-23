@@ -1,0 +1,414 @@
+var __utils = require('./lib/utils.es5')
+var __token = require('./lib/token.es5')
+
+module.exports = function () {
+    // Private (used double underscore __).
+
+  function __duckPunch (methodName, data) {
+    var _this = this
+    var success = data.success
+
+    data = __utils.extend(this.options[methodName + 'Data'], [data])
+
+    data.success = function (res) {
+      data.success = success
+      _this.options[methodName + 'Process'].call(_this, res, data)
+    }
+
+    this.options.http._http.call(this, data)
+  }
+
+  function __bindContext (methodName, data) {
+    var _auth = this.$auth
+
+    _auth.options[methodName + 'Perform'].call(_auth, _auth.options.router._bindData.call(_auth, data, this))
+  }
+
+  function __setTransitionState (state) {
+    if (!this.watch.transition.to) {
+      this.watch.transition.to = state
+    } else {
+      this.watch.transition.from = this.watch.transition.to
+      this.watch.transition.to = state
+    }
+  }
+
+  // Overrideable
+  function _routerBeforeEach (cb) {
+    if (this.options.refreshData.enabled && this.options.tokenExpired.call(this)) {
+      var _this = this
+      this.options.refreshPerform.call(this, {
+        success: function () {
+          if (_this.options.fetchData.enabled) {
+            _this.options.fetchPerform.call(_this, {success: cb, error: cb})
+          }
+        },
+        error: function () {
+          if (_this.options.fetchData.enabled) {
+            _this.options.fetchPerform.call(_this, {success: cb, error: cb})
+          }
+        }
+      })
+    }
+    if (this.watch.authenticated === null && __token.get.call(this)) {
+      this.watch.authenticated = false
+    } else if (__token.get.call(this) === null) {
+      this.options.logoutProcess.call(this, null, {})
+      this.watch.loaded = true
+      return cb.call(this)
+    } else {
+      this.watch.loaded = true
+      return cb.call(this)
+    }
+  }
+
+  function _transitionEach (routeAuth, cb) {
+    routeAuth = __utils.toArray(routeAuth)
+
+    if (routeAuth && (routeAuth === true || Object.prototype.toString.call(routeAuth) === '[object Array]')) {
+      if (!this.check()) {
+        __setTransitionState.call(this, 'logged-out-hidden')
+        cb.call(this, this.options.authRedirect)
+      } else if (Object.prototype.toString.call(routeAuth) === '[object Array]' && !__utils.compare(routeAuth, this.watch.data[this.options.rolesVar])) {
+        __setTransitionState.call(this, 'logged-in-forbidden')
+        cb.call(this, this.options.forbiddenRedirect)
+      } else {
+        __setTransitionState.call(this, 'logged-in-visible')
+        return cb()
+      }
+    } else if (routeAuth === false && this.check()) {
+      __setTransitionState.call(this, 'logged-in-hidden')
+      cb.call(this, this.options.notFoundRedirect)
+    } else {
+      __setTransitionState.call(this, 'logged-out-visible')
+      return cb()
+    }
+  }
+
+  function _requestIntercept (req) {
+    var token = __token.get.call(this)
+
+    if (token) {
+      this.options.auth.request.call(this, req, token)
+    }
+
+    return req
+  }
+
+  function _responseIntercept (res) {
+    var token
+
+    if (this.watch.authenticated && this.options.http._invalidToken) {
+      this.options.http._invalidToken.call(this, res)
+    }
+
+    token = this.options.auth.response.call(this, res)
+
+    if (token) {
+      __token.set.call(this, null, token)
+    }
+  }
+
+  function _parseUserData (data) {
+    return data.data
+  }
+
+  function _check (role) {
+    if (this.watch.authenticated === true) {
+      if (role) {
+        return __utils.compare(role, this.watch.data[this.options.rolesVar])
+      }
+
+      return true
+    }
+
+    return false
+  }
+
+  function _tokenExpired () {
+    return !this.watch.loaded && __token.get.call(this)
+  }
+
+  function _cookieDomain () {
+    return window.location.hostname
+  }
+
+  function _getUrl () {
+    var port = window.location.port
+
+    return window.location.protocol + '//' + window.location.hostname + (port ? ':' + port : '')
+  }
+
+  function _fetchPerform (data) {
+    var _this = this
+    var error = data.error
+
+    data.error = function (res) {
+      _this.watch.loaded = true
+
+      if (error) { error.call(_this, res) }
+    }
+
+    if (this.watch.authenticated !== true && !this.options.loginData.fetchUser) {
+      _fetchProcess.call(this, {}, data)
+    } else {
+      __duckPunch.call(this, 'fetch', data)
+    }
+  }
+
+  function _fetchProcess (res, data) {
+    this.watch.authenticated = true
+    this.watch.data = this.options.parseUserData.call(this, this.options.http._httpData.call(this, res))
+    this.watch.loaded = true
+
+    if (data.success) { data.success.call(this, res) }
+  }
+
+  function _refreshPerform (data) {
+    __duckPunch.call(this, 'refresh', data)
+  }
+
+  function _refreshProcess (res, data) {
+    if (data.success) { data.success.call(this, res) }
+  }
+
+  function _registerPerform (data) {
+    __duckPunch.call(this, 'register', data)
+  }
+
+  function _registerProcess (res, data) {
+    if (data.autoLogin === true) {
+      data = __utils.extend(data, [this.options.loginData])
+
+      this.options.loginPerform.call(this, data)
+    } else {
+      if (data.success) { data.success.call(this, res) }
+
+      if (data.redirect) {
+        this.options.router._routerGo.call(this, data.redirect)
+      }
+    }
+  }
+
+  function _loginPerform (data) {
+    __duckPunch.call(this, 'login', data)
+  }
+
+  function _loginProcess (res, data) {
+    var _this = this
+
+    // __cookie.set.call(this, data.rememberMe)
+
+    this.authenticated = null
+
+    this.options.fetchPerform.call(this, {
+      success: function () {
+        if (data.success) { data.success.call(this, res) }
+
+        if (data.redirect && _this.options.check.call(_this)) {
+          _this.options.router._routerGo.call(_this, data.redirect)
+        }
+      }
+    })
+  }
+
+  function _logoutPerform (data) {
+    data = __utils.extend(this.options.logoutData, [data || {}])
+
+    if (data.makeRequest) {
+      __duckPunch.call(this, 'logout', data)
+    } else {
+      this.options.logoutProcess.call(this, null, data)
+    }
+  }
+
+  function _logoutProcess (res, data) {
+    // __cookie.delete.call(this)
+
+    __token.delete.call(this, 'default')
+
+    this.watch.authenticated = false
+    this.watch.data = null
+
+    if (data.success) { data.success.call(this, res, data) }
+
+    if (data.redirect) {
+      this.options.router._routerGo.call(this, data.redirect)
+    }
+  }
+
+  function _oauth2Perform (data) {
+    var state = {}
+    var params = ''
+      // query = {}
+
+    if (data.code === true) {
+      data = __utils.extend(this.options[data.provider + 'Data'], [data])
+
+      try {
+        if (data.query.state) {
+          state = JSON.parse(decodeURIComponent(data.query.state))
+        }
+      } catch (e) {
+        console.error('vue-auth:error There was an issue retrieving the state data.')
+        state = {}
+      }
+
+      // data.rememberMe = state.rememberMe === true
+      data.state = state
+
+      this.options.loginPerform.call(this, data)
+    } else {
+      data = __utils.extend(this.options[data.provider + 'Oauth2Data'], [data])
+
+      data.redirect = data.redirect.call(this)
+
+      data.state = data.state || {}
+      // data.state.rememberMe = data.rememberMe === true
+
+      params = '?client_id=' + data.clientId + '&redirect_uri=' + data.redirect + '&scope=' + data.scope + '&response_type=code&state=' + encodeURIComponent(JSON.stringify(data.state))
+
+      window.location = data.url + params
+    }
+  }
+
+  var defaultOptions = {
+    // Variables
+    rolesVar: 'roles',
+    tokenName: 'auth-token-user',
+    expire: 7 * 24 * 60 * 60,
+    // Objects
+    authRedirect: {path: '/login'},
+    forbiddenRedirect: {path: '/403'},
+    notFoundRedirect: {path: '/404'},
+
+    registerData: {url: 'auth/register', method: 'POST', redirect: '/login'},
+    loginData: {url: 'auth/login', method: 'POST', fetchUser: true},
+    logoutData: {url: 'auth/logout', method: 'POST', makeRequest: true},
+    oauth1Data: {url: 'auth/login', method: 'POST'},
+    fetchData: {url: 'auth/userinfo', method: 'GET', enabled: true},
+    refreshData: {url: 'token/refresh', method: 'GET', enabled: true},
+
+    // Internal
+    getUrl: _getUrl,
+    cookieDomain: _cookieDomain,
+    parseUserData: _parseUserData,
+    tokenExpired: _tokenExpired,
+    check: _check,
+
+    transitionEach: _transitionEach,
+    routerBeforeEach: _routerBeforeEach,
+    requestIntercept: _requestIntercept,
+    responseIntercept: _responseIntercept,
+    // Contextual
+    registerPerform: _registerPerform,
+    registerProcess: _registerProcess,
+
+    loginPerform: _loginPerform,
+    loginProcess: _loginProcess,
+
+    logoutPerform: _logoutPerform,
+    logoutProcess: _logoutProcess,
+
+    fetchPerform: _fetchPerform,
+    fetchProcess: _fetchProcess,
+
+    refreshPerform: _refreshPerform,
+    refreshProcess: _refreshProcess,
+
+    oauth2Perform: _oauth2Perform
+  }
+
+  function Auth (Vue, options) {
+    var i
+    var ii
+    var msg
+    var drivers = ['auth', 'http', 'router']
+
+    this.currentToken = null
+
+    this.options = __utils.extend(defaultOptions, [options || {}])
+    this.options.Vue = Vue
+
+    this.watch = new this.options.Vue({
+      data: function () {
+        return {
+          data: null,
+          loaded: false,
+          transition: {from: null, to: null},
+          authenticated: null
+        }
+      }
+    })
+
+    for (i = 0, ii = drivers.length; i < ii; i++) {
+      if (!this.options[drivers[i]]) {
+        console.error('Error: "' + drivers[i] + '" driver must be set.')
+        return
+      }
+
+      if (this.options[drivers[i]]._init) {
+        msg = this.options[drivers[i]]._init.call(this)
+
+        if (msg) {
+          console.error('Error: ' + msg)
+          return
+        }
+      }
+    }
+
+        // Init interceptors.
+    this.options.router._beforeEach.call(this, this.options.routerBeforeEach, this.options.transitionEach)
+    this.options.http._interceptor.call(this, this.options.requestIntercept, this.options.responseIntercept)
+  }
+
+  Auth.prototype.ready = function () {
+    return this.watch.loaded
+  }
+
+  Auth.prototype.transition = function () {
+    return this.watch.transition
+  }
+
+  Auth.prototype.user = function (data) {
+    if (data) {
+      this.watch.data = data
+    }
+
+    return this.watch.data || {}
+  }
+
+  Auth.prototype.check = function (role) {
+    return this.options.check.call(this, role)
+  }
+
+  Auth.prototype.token = function (name) {
+    return __token.get.call(this, name)
+  }
+
+  Auth.prototype.fetch = function (data) {
+    __bindContext.call(this, 'fetch', data)
+  }
+
+  Auth.prototype.refresh = function (data) {
+    __bindContext.call(this, 'refresh', data)
+  }
+
+  Auth.prototype.register = function (data) {
+    __bindContext.call(this, 'register', data)
+  }
+
+  Auth.prototype.login = function (data) {
+    __bindContext.call(this, 'login', data)
+  }
+
+  Auth.prototype.logout = function (data) {
+    __bindContext.call(this, 'logout', data)
+  }
+
+  Auth.prototype.oauth2 = function (data) {
+    __bindContext.call(this, 'oauth2', data)
+  }
+
+  return Auth
+}

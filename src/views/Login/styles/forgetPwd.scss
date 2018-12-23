@@ -1,0 +1,16 @@
+.forget-pwd {
+  font-size: 15px;
+  .primary-font {
+    color: #7B7B8C;
+  }
+  .confirm {
+    width: 90%;
+    margin: 35px auto;
+    display: flex;
+    align-items: center;
+
+    .login-button {
+      font-size: 15px;
+    }
+  }
+}

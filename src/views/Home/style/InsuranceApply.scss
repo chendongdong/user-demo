@@ -1,0 +1,129 @@
+@import "../../../styles/scss/vars";
+
+.insurance-apply {
+
+  .app-content {
+    padding-bottom: 60px;
+    .insur-item{
+      font-size: 14px;
+      color: #666;
+      padding: 10px;
+      .number{
+        color: #555;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      p{
+        margin: 5px 0;
+      }
+      .range-item{
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    }
+    .sex-cell {
+      display: flex;
+      height: 25px;
+      .sex-checker-item {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        border-radius: 50%;
+        line-height: 30px;
+        margin: -2px 5px 0px 10px;
+        text-align: center;
+      }
+      .sex-checker-item-selected {
+        border-color: red;
+      }
+    }
+    .content-box {
+      margin: 4px 0;
+
+      .weui-cell {
+        font-size: 14px;
+        .vux-label-desc {
+          font-size: 10px;
+        }
+      }
+      .vux-datetime {
+        text-decoration: none;
+      }
+      .group-title-tips {
+        color: red;
+        line-height: 30px;
+        padding-left: 14px;
+        font-size: 13px;
+      }
+
+      .insurance-title-cell {
+        color:#757575;
+        font-weight: 600;
+
+        .weui-input {
+          color: green;
+          font-weight: 600;
+        }
+      }
+      .insurance-cell {
+        .weui-label {
+          width: auto;
+        }
+      }
+      .insurance-cell-tips {
+        .weui-label {
+          width: auto;
+        }
+      }
+      .insurance-remark {
+        white-space: pre-wrap;
+        margin: 5px;
+        background-color: #f7f7f7;
+        height: 200px;
+        overflow: scroll;
+        font-size: 14px;
+      }
+    }
+    .content-footer {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 54px;
+    z-index: 100;
+
+    .footer-box {
+      width: 96%;
+      height: 40px;
+      margin: 7px auto;
+
+      .weui-btn {
+        border-radius: 0;
+        line-height: 2;
+        font-size: 16px;
+      }
+      .weui-btn:after {
+        border: 0;
+      }
+      .btn-money {
+        background-color: $g-bg-color;
+        .footer-btn-money {
+          color: red;
+        }
+      }
+      .footer-box-title {
+        height: 44px;
+        margin-top: 5px;
+        background-color: orange;
+      }
+    }
+  }
+}

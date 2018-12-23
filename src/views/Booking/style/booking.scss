@@ -1,0 +1,130 @@
+
+.booking {
+  background-color: #FAFAFA;
+  a {
+    text-decoration:none;
+  }
+  .is-fixed {
+    z-index: 10;
+  }
+  .weui-cell {
+    font-size: 15px;
+  }
+  .custom-cell-title {
+    padding-right:10px;
+    font-size: 15px;
+    display:block;
+  }
+  .custom-mark {
+    color: red;
+  }
+  //.mint-cell-wrapper {
+  //  font-size: 14px;
+  //}
+  //.mint-cell {
+  //  min-height: 42px;
+  //}
+  .booking-info {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+    .title {
+      font-size: 14px;
+    }
+    p {
+      padding: 6px 0px;
+    }
+  }
+  .booking-action {
+    text-align: center;
+    padding-bottom: 30px;
+
+    .booking-button {
+      width: 300px;
+    }
+  }
+  .textarea {
+    overflow: auto;
+    resize: none;
+    vertical-align: top;
+  }
+  .sms-field {
+    .mint-field-core {
+    }
+  }
+  //.mint-radiolist-title {
+  //  font-size: 14px;
+  //  margin: 0px;
+  //  padding: 10px;
+  //  background-color: #FAFAFA;
+  //}
+  //.mint-cell-title {
+  //  width: 80px;
+  //}
+  //.mint-button--small {
+  //  padding: 0px 4px;
+  //  height: 28px;
+  //}
+  .footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    line-height: 41px;
+    text-align: center;
+    display: flex;
+
+    justify-content: center;
+    .booking-btn {
+      width: 90%;
+    }
+  }
+  //.mint-popup-bottom {
+  //  width: 100%;
+  //}
+  .sex-cell {
+    display: flex;
+    height: 25px;
+    .sex-checker-item {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ccc;
+      display: inline-block;
+      border-radius: 50%;
+      line-height: 30px;
+      margin: -2px 5px 0px 10px;
+      text-align: center;
+    }
+    .sex-checker-item-selected {
+      border-color: red;
+    }
+  }
+  .checker-popup {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  .bed-type-item {
+    background-color: #ddd;
+    color: #222;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    line-height: 18px;
+    border-radius: 15px;
+  }
+  .bed-type-item-selected {
+    background-color: #FF3B3B;
+    color: #fff;
+  }
+  .bed-type-item-disabled {
+    color: #999;
+  }
+
+  .weui-btn_disabled.weui-btn_primary {
+    background-color: #F7F7F7;
+    color: rgba(0,0,0,.3);
+  }
+  .weui-btn_primary {
+    background-color: #00A4FF;
+  }
+
+}

@@ -1,0 +1,51 @@
+.detail{
+  .state{
+    color: red;
+    font-size: 18px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+  .item{
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .flex-img{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .image {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  .vux-close {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    color: #ccc;
+    &:after,&:before{
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      background: #98979d;
+    }
+    &:before{
+      transform: rotate(45deg);
+    }
+    &:after{
+      transform: rotate(-45deg);
+    }
+  }
+}

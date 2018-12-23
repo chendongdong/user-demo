@@ -1,0 +1,60 @@
+@import "../../../styles/scss/vars";
+
+.login {
+  font-size: 15px;
+  .content {
+    .primary-font {
+      color: #7B7B8C;
+    }
+    .explanation {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .primary {
+      font-size: 20px;
+    }
+    .input-group {
+      margin: 2px 20px;
+      .weui-cell {
+        padding: 10px;
+      }
+      .weui-cell:before {
+        color: red;
+        left: 0;
+        border-top: none;
+        border-bottom: 2px solid $g-brand-color;
+      }
+      .weui-cell:last-child {
+        border-bottom: 1px solid $g-brand-color;
+      }
+    }
+  }
+  .btn-group-1 {
+    margin: 10px;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+
+  }
+  .confirm {
+    width: 90%;
+    margin: 30px auto 0 auto;
+
+    //display: flex;
+    //align-items: center;
+
+    .login-button {
+      font-size: 15px;
+    }
+    .weui-btn_default {
+      background-color: $g-gray;
+      opacity: 0.5;
+      color: #FFFFFF;
+      &:after {
+        border: none;
+      }
+    }
+  }
+}

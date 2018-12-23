@@ -1,0 +1,63 @@
+var __storage = require('./storage.es5')
+
+module.exports = (function () {
+
+  var isLocalStorageE = false
+  try {
+    window.localStorage.setItem('stk', 1);
+    window.localStorage.removeItem('stk');
+  } catch (e) {
+    isLocalStorageE = true
+  }
+
+  // console.log(isLocalStorageE)
+  function tokenName (name) {
+    name = name || this.currentToken
+
+    // if (!name && this.other.call(this)) {
+    if (!name || name === 'default') {
+      name = 'default'
+    }
+    return name + '-' + this.options.tokenName
+  }
+
+  return {
+    get: function (name) {
+      name = tokenName.call(this, name)
+
+      var token
+      if (isLocalStorageE) {
+        token = __storage.cookie.get(name)
+      } else {
+        token = __storage.get(name)
+      }
+      return token
+    },
+
+    set: function (name, token, expire) {
+      name = tokenName.call(this, name)
+
+      if (!expire) expire = this.options.expire
+
+      if (isLocalStorageE) {
+        __storage.cookie.set(name, token, expire, '/')
+      } else {
+        __storage.set(name, token, expire)
+      }
+    },
+
+    delete: function (name) {
+      name = tokenName.call(this, name)
+
+      if (isLocalStorageE) {
+        __storage.cookie.remove(name)
+      } else {
+        __storage.remove(name)
+      }
+    },
+
+    expiring: function () {
+      return false
+    }
+  }
+})()

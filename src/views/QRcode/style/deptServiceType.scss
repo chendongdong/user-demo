@@ -1,0 +1,61 @@
+@import "../../../styles/scss/vars";
+
+.dept-service-type {
+  .app-header {
+    position: fixed;
+    width: 100%
+  }
+
+  .content {
+    margin-top: 46px;
+
+    .swiper-box {
+      .swiper-label {
+        background-color: #fff;
+      }
+    }
+    .item-card {
+      margin: 8px;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: flex-start;
+      height: auto;
+      min-height: 90px;
+      .img-bg {
+        display: flex;
+        justify-content: center;
+        align-items: Center;
+        padding-left: 8px;
+      }
+      img {
+        height: 67px;
+        width: 100px;
+      }
+      .info {
+        width: 100%;
+        .info-header {
+          height: 20px;
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+          .info-title {
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .booking-btn {
+            height: 18px;
+            background-color: $g-brand-color;
+            color: #FFFFFF;
+            border-radius: 2px;
+            padding: 4px 8px;
+            font-size: 13px;
+          }
+        }
+        .info-text {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

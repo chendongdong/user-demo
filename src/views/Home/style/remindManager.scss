@@ -1,0 +1,40 @@
+@import "../../../styles/scss/vars";
+
+.remind-manager {
+  .app-content {
+    .content-card {
+      color: $g-blue-color;
+      font-size: 13px;
+      background-color: #FFFFFF;
+      margin: 10px  8px;
+      border-radius: 5px;
+      border: 1px solid $g-gary-lighter;
+      .header {
+        height: 36px;
+        border-bottom: 1px solid $g-gary-lighter;
+        span {
+          line-height: 36px;
+          margin-left: 10px;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+      .base-info {
+        height: auto;
+        position: relative;
+        padding: 8px 10px;
+        span {
+          line-height: 150%;
+        }
+      }
+    }
+
+    .btn {
+      .weui-btn {
+        height: 40px;
+        font-size: 15px;
+        line-height: normal;
+      }
+    }
+  }
+}

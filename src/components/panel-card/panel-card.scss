@@ -1,0 +1,350 @@
+@import "../../styles/scss/vars";
+
+.panel-card {
+  .case-his {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6  NEW - Chrome*/
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    align-items: center;
+    -webkit-align-items: center;
+    .date {
+      width: 25%;
+    }
+    .item {
+      width: 75%;
+      color: #666;
+    }
+    p {
+      padding: 2px 0;
+    }
+  }
+  .order {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    .state {
+      font-size: 16px;
+      color: red;
+      float: right
+    }
+    .blue {
+      color: #5491ec;
+      font-size: 15px;
+    }
+    p {
+      font-size: 13px;
+      color: #666;
+      padding: 2px 0;
+    }
+  }
+  .search {
+    background: white;
+    display: flex;
+    display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6  NEW - Chrome*/
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border: 1px solid #e5e5e5;
+    align-items: center;
+    -webkit-align-items: center;
+    .consult-img{
+      width: 50px;
+      height: 40px;
+      position: relative;
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+      }
+      .bradge{
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    .img-father {
+      width: 70px;
+      height: 70px;
+    }
+    .image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+    .base-info {
+      margin-left: 10px;
+      display: block;
+      flex: 1;
+      p {
+        margin: 8px 0px;
+        font-size: 13px;
+        color: #666;
+      }
+      .name {
+        font-size: 16px;
+        color: #333;
+      }
+    }
+    .button {
+      /*width: 20%;*/
+      margin-right: 10px;
+    }
+    .mint-button {
+      height: 34px;
+      width: 160%;
+      font-size: 14px;
+      z-index: -1;
+      background: #68C84F;
+      color: white;
+      border: 0px;
+    }
+  }
+  .balance-his {
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 5px;
+    height: 50px;
+    display: flex;
+    display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6  NEW - Chrome*/
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    background-color: white;
+    .b-info {
+      display: flex;
+      display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6  NEW - Chrome*/
+      display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+      flex-direction: column;
+      -webkit-flex-direction: column;
+      padding: 5px;
+    }
+    .b-number {
+      padding: 5px;
+    }
+  }
+  .check-more {
+    float: right;
+    font-size: 12px;
+    margin-top: 2px;
+    margin-right: 25px;
+    color: #666;
+
+  }
+  .more {
+    vertical-align: middle;
+    height: 30px;
+  }
+  .more:after {
+    border: solid 2px #c8c8cd;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: " ";
+    right: 20px;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    margin-top: 10px;
+    z-index: -1;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .remind-card {
+    color: $g-blue-color;
+    font-size: 13px;
+    background-color: #FFFFFF;
+    margin: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid $g-gary-lighter;
+    .header {
+      height: 36px;
+      border-bottom: 1px solid $g-gary-lighter;
+      .name {
+        line-height: 36px;
+        padding-left: 10px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .date {
+        line-height: 40px;
+        overflow: hidden;
+        padding-left: 10px;
+      }
+    }
+    .done-img {
+      float: right;
+      transform: rotate(30deg);
+      height: 20px;
+      opacity: 0.4;
+      margin-top: -22px;
+    }
+    .base-info {
+      height: auto;
+      min-height: 60px;
+      position: relative;
+      .content {
+        margin-right: 30px;
+        padding: 10px;
+        height: auto;
+        span {
+          line-height: 150%;
+        }
+      }
+      .cell-x-icon-bg {
+        position: absolute;
+        height: 100%;
+        float: right;
+        right: 0;
+        .vux-x-icon {
+          fill: $g-gary-lighter;
+          align-items: center;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .notify-card {
+    background-color: #FFFFFF;
+    margin: 4px 8px;
+    padding: 0 8px 8px 20px;
+    border-radius: 4px;
+    border-bottom: 1px solid $g-gary-lighter;
+    position: relative;
+    .card-content {
+      background-color: white;
+      .card-content-header {
+        line-height: 40px;
+        height: 40px;
+        .vux-badge {
+          background: $g-brand-color;
+        }
+        .time {
+          padding-left: 4px;
+          color: $g-gray;
+          font-size: 13px;
+          line-height: 40px;
+        }
+      }
+      .content {
+        height: auto;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        min-height: 30px;
+        font-size: 13px;
+      }
+    }
+  }
+  .prenatal-record-card {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    background: white;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -webkit-flex; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    flex-direction: row;
+    justify-content: flex-start;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: flex-start;
+
+    .base-info {
+      padding: 10px 8px 0 8px;
+      display: flex;
+      display: -o-flex;
+      display: -ms-flex;
+      display: -ms-flexbox; /* TWEENER - IE 10 */
+      display: -webkit-flex; /* NEW - Chrome */
+      justify-content: space-between;
+      -webkit-justify-content: space-between;
+
+      .base-info-name {
+        display: inline-flex;
+        img {
+          margin-top: 0;
+          padding: 0 8px;
+        }
+        span {
+          line-height: 25px;
+        }
+        .name {
+          font-size: 15px;
+        }
+        .state {
+          font-size: 14px;
+          padding-left: 8px;
+          color: red;
+        }
+      }
+
+      .operate {
+        float: right;
+        .sms-time {
+          padding-left: 10px;
+        }
+        .info-btn {
+          border: 1px solid cornflowerblue;
+          color: cornflowerblue;
+          background-color: #FFFFFF;
+          border-radius: 5px;
+          padding: 4px 8px;
+          margin-left: 4px;
+        }
+      }
+    }
+    .bed-info {
+      padding-left: 10px;
+      border-bottom: 1px solid #e5e5e5;
+      position: relative;
+      .cell-x-icon-bg {
+        position: absolute;
+        height: 100%;
+        float: right;
+        right: 0;
+        .vux-x-icon {
+          fill: lightgrey;
+          align-items: center;
+          height: 100%;
+        }
+      }
+      p {
+        line-height: 25px;
+        &:last-child {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  .btn-booking {
+    height: 26px;
+    width: 70px;
+    font-size: 14px;
+    z-index: -1;
+    background: white;
+    color: #68C84F;
+    border: 1px solid #68C84F;
+    border-radius: 3px;
+  }
+
+  .vux-x-icon {
+    fill: #c8c8cd;
+  }
+}
